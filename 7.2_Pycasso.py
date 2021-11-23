@@ -1,20 +1,41 @@
-'''
-PYCASSO PROJECT
----------------
-Your job is to make a cool picture.
-You must use multiple colors.
-You must have a coherent picture. No abstract art with random shapes.
-You must use multiple types of graphic functions (e.g. circles, rectangles, lines, etc.)
-Somewhere you must include a WHILE or FOR loop to create a repeating pattern.
-Do not just redraw the same thing in the same location 10 times. 
-You can contain multiple drawing commands in a loop, so you can draw multiple train cars for example.
-Please use comments and blank lines to make it easy to follow your program. 
-If you have 5 lines that draw a robot, group them together with blank lines above and below. 
-Then add a comment at the top telling the reader what you are drawing.
-IN THE WINDOW TITLE PLEASE PUT YOUR NAME.
-When you are finished Pull Request your file to your instructor.
-'''
-
-
-
-
+d = 60
+x = 0
+y = 0
+import arcade
+arcade.open_window(400, 400, "Will Fuchs")
+arcade.set_background_color(arcade.color.WHITE)
+arcade.start_render()
+#Background
+for i in range(20):
+    arcade.draw_line(x, y, x, 400, arcade.color.BLACK)
+    x += 20
+for i in range(20):
+    arcade.draw_line(0, y, 400, y, arcade.color.BLACK)
+    y += 20
+#Disc Case
+arcade.draw_rectangle_filled(200, 200, 300, 300, arcade.color.LIGHT_GRAY)
+arcade.draw_rectangle_outline(200, 200, 300, 300, arcade.color.BLACK, 6)
+#Disc
+arcade.draw_circle_filled(200, 200, 140, arcade.color.HELIOTROPE_GRAY)
+arcade.draw_circle_outline(200, 200, 140, arcade.color.BLACK, 6)
+arcade.draw_circle_filled(200, 200, 60, arcade.color.WHITE)
+arcade.draw_circle_filled(200, 200, 25, arcade.color.GRAY)
+arcade.draw_circle_filled(200, 200, 10, arcade.color.WHITE)
+arcade.draw_circle_outline(200, 200, 10, arcade.color.BLACK, 3)
+for i in range(2):
+    arcade.draw_circle_outline(200, 200, d, arcade.color.BLACK, 4)
+    d -= 25
+#Pink Thing
+arcade.draw_rectangle_filled(300, 200, 110, 85, arcade.color.FUCHSIA_PINK)
+arcade.draw_rectangle_outline(300, 200, 110, 85, arcade.color.BLACK, 2)
+#Text
+arcade.draw_text("80", 260, 245, arcade.color.BLACK, 30)
+arcade.draw_rectangle_outline(210, 110, 40, 40, arcade.color.BLACK)
+arcade.draw_text("M", 192, 107, arcade.color.BLACK, 15)
+arcade.draw_text("D", 192, 92, arcade.color.BLACK, 15)
+arcade.draw_rectangle_filled(200, 25, 150, 45, arcade.color.LIGHT_FUCHSIA_PINK)
+arcade.draw_rectangle_outline(200, 25, 150, 45, arcade.color.BLACK, 3)
+arcade.draw_text("YANDHI", 126, 5.5, arcade.color.PALATINATE_PURPLE, 30, 200, "left",)
+arcade.draw_text("YANDHI", 129, 7, arcade.color.BLACK, 30, 200, "left")
+arcade.finish_render()
+arcade.run()
